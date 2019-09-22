@@ -87,8 +87,9 @@ services:
       - 3000:3000
     volumes:
       - grafana_data:/var/lib/grafana
-    env_file:
-      - ./grafana/config.monitoring
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=foobar
+      - GF_USERS_ALLOW_SIGN_UP=false
     networks:
       - back-tier
       - front-tier
