@@ -16,11 +16,11 @@ up:
 test:
 	docker-compose up -d
 	docker ps
-	while ! curl --retry 10 --retry-delay 5 -v http://0.0.0.0:9090 >/dev/null; do sleep 1; done
-  while ! curl --retry 10 --retry-delay 5 -v http://0.0.0.0:9093 >/dev/null; do sleep 1; done
-  while ! curl --retry 10 --retry-delay 5 -v http://0.0.0.0:3000 >/dev/null; do sleep 1; done
-	while ! curl --retry 10 --retry-delay 5 -v http://0.0.0.0:9091 >/dev/null; do sleep 1; done
-	
+	curl --retry 10 --retry-delay 5 -v -s http://0.0.0.0:9090
+	curl --retry 10 --retry-delay 5 -v -s http://0.0.0.0:9091
+	curl --retry 10 --retry-delay 5 -v -s http://0.0.0.0:9093
+	curl --retry 10 --retry-delay 5 -v -s http://0.0.0.0:3000
+
 reload-prom:
 	curl -X POST http://localhost:9090/-/reload
 
