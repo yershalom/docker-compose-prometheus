@@ -10,6 +10,8 @@ up:
 	@echo Grafana:      http://localhost:3000  \(User\: admin / Password\: foobar\)
 	@echo Pushgateway:  http://localhost:9091
 	@echo Alertmanager: http://localhost:9093
+	@echo elasticsearch: http://localhost:9200
+	@echo elasticsearch_exporter: http://localhost:9114
 	@echo
 	@echo
 
